@@ -2,6 +2,7 @@
 # por la gente del congreso
 from openpyxl import load_workbook
 import json
+import re
 
 def from_h(hour):
     return hour.split('-')[0].strip()
@@ -15,6 +16,17 @@ def to_h(col, row, worksheet):
     else:
         return worksheet['A{}'.format(row)].value.split('-')[1].strip()
 
+def get_title(author, talk_names):
+    for name in talk_names:
+        if name.startswith(author):
+            matches = re.search(r'(.*) "(.*)"', name)
+            
+            if matches:
+                return matches.group(2)
+            else:
+                return name
+    return 'not_found_as_substring'
+
 if __name__ == '__main__':
     workbook = load_workbook(filename='areas.xlsx')
 
@@ -24,6 +36,8 @@ if __name__ == '__main__':
 
     for sheet_name in sheet_names:
         worksheet = workbook[sheet_name]
+
+        talk_names = tuple(filter(lambda x:x, map(lambda c:c[0].value, worksheet['A26:A70'])))
 
         for row in range(6, 23 + 1):
             for col in map(chr, range(66, 70 + 1)):
@@ -37,7 +51,7 @@ if __name__ == '__main__':
                         'day'   : worksheet['{}5'.format(col)].value,
                         'from'  : from_h(worksheet['A{}'.format(row)].value),
                         'to'    : to_h(col, row, worksheet),
-                        'title' : 'PENDING',
+                        'title' : get_title(worksheet[cell].value, talk_names),
                     })
 
     json.dump(organized_data, open('organized_data.json', 'w'), indent=2)
