@@ -24,6 +24,7 @@ function initApp(scheduleData) {
 			section: 'home',
 			left_icon: 'fa-bars',
 			left_action: null,
+			currentHour: moment().format('HH:mm'),
 			sections: {
 				home: {
 					title: 'Encuentra charlas',
@@ -51,22 +52,32 @@ function initApp(scheduleData) {
 			},
 		},
 
+		created: function () {
+			var self = this;
+
+			setInterval(function () {
+				self.currentHour = moment().format('HH:mm');
+			}, 2000);
+		},
+
 		computed: {
 			talksHappeningNow: function () {
-				return this.schedule.filter((talk) => {
-					var now = '10:00';
-					var day = 'Martes';
+				var self = this;
+				var now = self.currentHour;
+				var day = 'Martes';
 
+				return this.schedule.filter((talk) => {
 					return talk.day == day && talk.from <= now && talk.to > now;
 				});
 			},
 
 			talksHappeningNext: function () {
-				return this.schedule.filter((talk) => {
-					var now = '10:30';
-					var day = 'Martes';
+				var self = this;
+				var nextTime = self.currentHour;
+				var day = 'Martes';
 
-					return talk.day == day && talk.from <= now && talk.to > now;
+				return this.schedule.filter((talk) => {
+					return talk.day == day && talk.from <= nextTime && talk.to > nextTime;
 				});
 			},
 		},
