@@ -1,7 +1,7 @@
 var request = new XMLHttpRequest();
 var scheduleData = [];
 
-request.open('GET', 'datamining/organized_data.json', true);
+request.open('GET', 'schedule.json', true);
 request.onload = () => {
 	if (request.status == 200) {
 		initApp(JSON.parse(request.responseText));

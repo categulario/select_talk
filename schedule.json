@@ -1,0 +1,29 @@
+[
+  {
+    "place": "1, Facultad: Ciencias Exactas, Edificio C.",
+    "from": "22:30",
+    "day": "6",
+    "to": "23:30",
+    "area": "\u00c1LGEBRA",
+    "title": "Sobre grupos finitos supersolubles y clases minimales de grupos supersolubles",
+    "author": "César"
+  },
+  {
+    "place": "14, Facultad: Educaci\u00f3n F\u00edsica, Edificio \u00danico.",
+    "from": "22:00",
+    "day": "6",
+    "to": "23:00",
+    "area": "TOPOLOG\u00cdA GENERAL",
+    "title": "Cardinales invariantes en la topolog\u00eda general y en el \u00e1lgebra topol\u00f3gica",
+    "author": "Arturo"
+  },
+  {
+    "place": "14, Facultad: Educaci\u00f3n F\u00edsica, Edificio \u00danico.",
+    "from": "23:00",
+    "day": "6",
+    "to": "23:30",
+    "area": "TOPOLOG\u00cdA GENERAL",
+    "title": "Nudos y 3-variedades",
+    "author": "Juan"
+  }
+]
