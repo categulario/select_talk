@@ -14,6 +14,38 @@ request.onerror = () => {
 };
 request.send();
 
+// the progress bar component
+Vue.component('item-progress', {
+	props: [
+		'from',
+		'to',
+		'hour',
+	],
+
+	computed: {
+		progressBarWidth: function () {
+			var from_hour = this.hourToDecimal(this.from);
+			var to_hour = this.hourToDecimal(this.to);
+			var cur_hour = this.hourToDecimal(this.hour);
+			var value = (cur_hour - from_hour)/(to_hour - from_hour)*100;
+
+			if (value < 0) {
+				return '0%';
+			} else {
+				return `${value}%`;
+			}
+		},
+	},
+
+	methods: {
+		hourToDecimal: function (hour) {
+			var pieces = hour.split(':').map(p => parseInt(p));
+
+			return pieces[0] + pieces[1]/60;
+		},
+	}
+});
+
 function initApp(scheduleData) {
 	window.App = new Vue({
 		el: '#app',
@@ -64,7 +96,7 @@ function initApp(scheduleData) {
 			talksHappeningNow: function () {
 				var self = this;
 				var now = self.currentHour;
-				var day = 'Martes';
+				var day = moment().format('d');
 
 				return this.schedule.filter((talk) => {
 					return talk.day == day && talk.from <= now && talk.to > now;
@@ -73,8 +105,20 @@ function initApp(scheduleData) {
 
 			talksHappeningNext: function () {
 				var self = this;
-				var nextTime = self.currentHour;
-				var day = 'Martes';
+				var now = self.currentHour;
+				var day = moment().format('d');
+				var nextTime;
+
+				// transform now to match next time
+				var curminute = now.split(':')[1];
+				var curhour = now.split(':')[0];
+				var minute = parseInt(parseInt(curminute)/30);
+
+				if (minute == 0) {
+					nextTime = `${curhour}:${30}`;
+				} else {
+					nextTime = `${parseInt(curhour)+1}:00`;
+				}
 
 				return this.schedule.filter((talk) => {
 					return talk.day == day && talk.from <= nextTime && talk.to > nextTime;
