@@ -28,12 +28,11 @@
 
 				<div
 					class="schedule-list"
-					v-if="section=='schedule-now'"
+					v-if="section=='schedule'"
 				>
 					<div
 						class="schedule-item"
-						v-for="item in talksHappeningNow"
-						:key="item.area"
+						v-for="item in this[default_filter]"
 					>
 						<strong class="schedule-title">{{ item.title }}</strong><br>
 						<span class="schedule-author">

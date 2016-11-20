@@ -30,10 +30,23 @@ function initApp(scheduleData) {
 					left_icon: 'fa-bars',
 					left_action: null,
 				},
-				'schedule-now': {
-					title: 'Charlas sucediendo ahora',
+				schedule: {
+					title: 'Charlas',
 					left_icon: 'fa-arrow-left',
 					left_action: 'home',
+
+					subs: {
+						now: {
+							title: 'Charlas ahora',
+							default_filter: 'talksHappeningNow',
+							default_key: 'area',
+						},
+						next: {
+							title: 'Charlas siguientes',
+							default_filter: 'talksHappeningNext',
+							default_key: 'area',
+						},
+					},
 				},
 			},
 		},
@@ -44,18 +57,27 @@ function initApp(scheduleData) {
 					var now = '10:00';
 					var day = 'Martes';
 
-					return talk.day == day && talk.from <= now && talk.to >= now;
+					return talk.day == day && talk.from <= now && talk.to > now;
+				});
+			},
+
+			talksHappeningNext: function () {
+				return this.schedule.filter((talk) => {
+					var now = '10:30';
+					var day = 'Martes';
+
+					return talk.day == day && talk.from <= now && talk.to > now;
 				});
 			},
 		},
 
 		methods: {
 			talksNowClick: function () {
-				this.changeSection('schedule-now');
+				this.changeSection('schedule', 'now');
 			},
 
 			talksNextClick: function () {
-				console.log('click');
+				this.changeSection('schedule', 'next');
 			},
 
 			runLeftAction: function () {
@@ -67,11 +89,17 @@ function initApp(scheduleData) {
 				this.changeSection(this.left_action);
 			},
 
-			changeSection: function (section) {
+			changeSection: function (section, sub) {
 				this.section = section;
 				this.title = this.sections[section].title;
 				this.left_icon = this.sections[section].left_icon;
 				this.left_action = this.sections[section].left_action;
+
+				if (this.sections[section].subs && sub) {
+					this.title = this.sections[section].subs[sub].title;
+					this.default_filter = this.sections[section].subs[sub].default_filter;
+					this.default_key = this.sections[section].subs[sub].default_key;
+				}
 			},
 		},
 	});
