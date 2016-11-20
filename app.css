@@ -40,6 +40,7 @@ body {
 	line-height: var(--title-height);
 	font-size: 24px;
 	color: white;
+	cursor: pointer;
 }
 
 .title-title {
@@ -71,4 +72,32 @@ body {
 	color: white;
 	border: 5px solid var(--color-highlight);
 	padding: 15px;
+}
+
+.schedule-list {
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.schedule-item {
+	background-color: var(--color-mid);
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.schedule-title {
+	color: #555;
+}
+
+.schedule-data {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.schedule-author {
+	margin-top: 10px;
+	display: block;
+	text-align: center;
 }

@@ -9,26 +9,49 @@
 	</head>
 	<body>
 
-		<div class="container">
+		<div id="app" class="container">
 
 			<div class="title-bar">
 				<div class="title-left-action">
-					<i class="fa fa-bars"></i>
+					<i :class="left_icon" @click="runLeftAction" class="fa"></i>
 				</div>
 				<div class="title-title">
-					App name
+					{{ title }}
 				</div>
 			</div>
 			<div class="main-content">
 
-				<div class="btn-container">
-					<button class="btn">¿A qué puedo entrar a continuación?</button>
-					<button class="btn">¿A qué puedo entrar ahora?</button>
+				<div class="btn-container" v-if="section=='home'">
+					<button class="btn" @click="talksNextClick">¿A qué puedo entrar a continuación?</button>
+					<button class="btn" @click="talksNowClick">¿A qué puedo entrar ahora?</button>
+				</div>
+
+				<div
+					class="schedule-list"
+					v-if="section=='schedule-now'"
+				>
+					<div
+						class="schedule-item"
+						v-for="item in talksHappeningNow"
+						:key="item.area"
+					>
+						<strong class="schedule-title">{{ item.title }}</strong><br>
+						<span class="schedule-author">
+							{{ item.author}}<br>
+							<small>{{ item.place}}</small>
+						</span>
+						<div class="schedule-data">
+							<span>{{ item.from }} - {{ item.to }}</span>
+							<span>{{ item.area }}</span>
+						</div>
+					</div>
 				</div>
 
 			</div>
 
 		</div>
-	
+
+		<script type="text/javascript" src="bower_components/vue/dist/vue.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
 	</body>
 </html>
