@@ -71,11 +71,16 @@ body {
 	background-color: var(--color-mid);
 	border: none;
 	color: var(--color-text-black);
-	border-right: 5px solid var(--color-highlight);
-	border-bottom: 5px solid var(--color-highlight);
+/*	border-right: 5px solid var(--color-highlight);
+	border-bottom: 5px solid var(--color-highlight); */
+	box-shadow: 5px 5px teal;
 	padding: 15px;
 	cursor: pointer;
 	font-size: 20px;
+}
+
+.btn:active {
+	box-shadow: none;
 }
 
 .schedule-list {

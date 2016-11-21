@@ -14,3 +14,4 @@ Una aplicación para elegir a qué plática entrar en un congreso muy grande
 	- area
 * filtrar además por área
 * normalizar horas a HH:MM
+* tomar los intervalos del programa, no inventarlos
