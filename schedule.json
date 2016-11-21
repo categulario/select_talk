@@ -1,29 +1,332 @@
-[
-  {
-    "place": "1, Facultad: Ciencias Exactas, Edificio C.",
-    "from": "22:30",
-    "day": "6",
-    "to": "23:30",
-    "area": "\u00c1LGEBRA",
-    "title": "Sobre grupos finitos supersolubles y clases minimales de grupos supersolubles",
-    "author": "César"
-  },
-  {
-    "place": "14, Facultad: Educaci\u00f3n F\u00edsica, Edificio \u00danico.",
-    "from": "22:00",
-    "day": "6",
-    "to": "23:00",
-    "area": "TOPOLOG\u00cdA GENERAL",
-    "title": "Cardinales invariantes en la topolog\u00eda general y en el \u00e1lgebra topol\u00f3gica",
-    "author": "Arturo"
-  },
-  {
-    "place": "14, Facultad: Educaci\u00f3n F\u00edsica, Edificio \u00danico.",
-    "from": "23:00",
-    "day": "6",
-    "to": "23:30",
-    "area": "TOPOLOG\u00cdA GENERAL",
-    "title": "Nudos y 3-variedades",
-    "author": "Juan"
-  }
-]
+{
+	"marks": [
+		"09:00",
+		"09:30",
+		"10:30",
+		"11:30",
+		"12:00",
+		"12:30",
+		"13:30",
+		"16:00",
+		"17:00",
+		"17:30",
+		"18:00",
+		"19:00"
+	],
+
+	"schedule": [
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "09:00",
+			"day": "1",
+			"to": "09:30",
+			"area": "Actividades",
+			"title": "Inauguración",
+			"author": "Facultad de matemáticas"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "09:30",
+			"day": "1",
+			"to": "10:30",
+			"area": "Ponencias",
+			"title": "Espacios Singulares",
+			"author": "Dr. José Seade Kuri"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "09:30",
+			"day": "2",
+			"to": "10:30",
+			"area": "Ponencias",
+			"title": "Lemas de Newman y Bergman",
+			"author": "M.C. Ernesto Álvarez González"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "09:30",
+			"day": "3",
+			"to": "10:30",
+			"area": "Ponencias",
+			"title": "Existencia de ciclos límites en una cadena alimentaria tritrófica con respuestas funcionales de tipo logística y Holling II y III",
+			"author": "Dr. Francisco Eduardo Castillo Santos"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "09:30",
+			"day": "4",
+			"to": "10:30",
+			"area": "Ponencias",
+			"title": "Existencia de ciclos límite en un modelo de cadena alimentaria intragremial",
+			"author": "Dr. Iván Loreto Hernández"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "09:30",
+			"day": "5",
+			"to": "10:30",
+			"area": "Ponencias",
+			"title": "Estabilidad global del equilibrio endémico de un modelo Matemático de la Hepatitis C, usando teoría de sistemas competitivos",
+			"author": "Dr. Alejandro Peregrino Pérez"
+		},
+
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "10:30",
+			"day": "1",
+			"to": "11:30",
+			"area": "Cursos",
+			"title": "Sistémas dinámicos y Álgebra Computacional",
+			"author": "Dr. José Antonio Vallejo Rodriguez"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "10:30",
+			"day": "2",
+			"to": "11:30",
+			"area": "Cursos",
+			"title": "Sistémas dinámicos y Álgebra Computacional",
+			"author": "Dr. José Antonio Vallejo Rodriguez"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "10:30",
+			"day": "3",
+			"to": "11:30",
+			"area": "Cursos",
+			"title": "Sistémas dinámicos y Álgebra Computacional",
+			"author": "Dr. José Antonio Vallejo Rodriguez"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "10:30",
+			"day": "4",
+			"to": "11:30",
+			"area": "Cursos",
+			"title": "Sistémas dinámicos y Álgebra Computacional",
+			"author": "Dr. José Antonio Vallejo Rodriguez"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "10:30",
+			"day": "5",
+			"to": "11:30",
+			"area": "Cursos",
+			"title": "Sistémas dinámicos y Álgebra Computacional",
+			"author": "Dr. José Antonio Vallejo Rodriguez"
+		},
+
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "12:00",
+			"day": "1",
+			"to": "12:30",
+			"area": "Ponencias",
+			"title": "Octonions and their generalizations",
+			"author": "Dr. Alexandre Grikovich"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "12:00",
+			"day": "2",
+			"to": "12:30",
+			"area": "Ponencias",
+			"title": "Sobre la construcción de conjuntos homeomorfos a la variedad de Grassman de 2-planos",
+			"author": "Lic. Iván Espinobarros García"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "12:00",
+			"day": "3",
+			"to": "12:30",
+			"area": "R. de tesis",
+			"title": "Ideales débilmente 2-absorbentes",
+			"author": "Est. Rocío Ríos Sierra"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "12:00",
+			"day": "4",
+			"to": "12:30",
+			"area": "Ponencias",
+			"title": "Sobre semicubrientes de grupos topológicos",
+			"author": "Est. Angel Rolando Jimenez Cruz"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "12:00",
+			"day": "5",
+			"to": "12:30",
+			"area": "R. de tesis",
+			"title": "La T-transitividad de las gráficas",
+			"author": "Lic. Diana Milagros Parra Vargas"
+		},
+
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "12:30",
+			"day": "1",
+			"to": "13:30",
+			"area": "Ponencias",
+			"title": "Sobre la existencia de un ciclo límite para un sistema tritrófico",
+			"author": "Dr. Miguel Angel de la Rosa Castillo"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "12:30",
+			"day": "2",
+			"to": "13:30",
+			"area": "Ponencias",
+			"title": "Sobre las simetría de conjuntos convexos a partir de las simetrías de sus secciones transversales",
+			"author": "Dr. Efrén Morales Amaya"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "12:30",
+			"day": "3",
+			"to": "13:30",
+			"area": "Ponencias",
+			"title": "Encontrando raíces de polinomios con la ayuda de la función logaritmo",
+			"author": "Dr. Eréndira Munguía Villanueva"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "12:30",
+			"day": "4",
+			"to": "13:30",
+			"area": "Ponencias",
+			"title": "Rigidez de acciones de grupos de Lie",
+			"author": "Dr. Eli Vanney Roblero Méndez"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "12:30",
+			"day": "5",
+			"to": "13:30",
+			"area": "Ponencias",
+			"title": "Octonions and their generalizations",
+			"author": "Dr. Alexandre Grichkov"
+		},
+
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "16:00",
+			"day": "1",
+			"to": "17:00",
+			"area": "Ponencias",
+			"title": "Mujeres matemáticas",
+			"author": "Dr. Eréndira Munguía Villanueva"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "16:00",
+			"day": "2",
+			"to": "17:00",
+			"area": "Cursos",
+			"title": "Sistemas dinámicos. Algunos ejemplos",
+			"author": "Dr. Porfirio Toledo"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "16:00",
+			"day": "4",
+			"to": "17:00",
+			"area": "Cursos",
+			"title": "Sistemas dinámicos. Algunos ejemplos",
+			"author": "Dr. Porfirio Toledo"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "16:00",
+			"day": "5",
+			"to": "17:00",
+			"area": "Cursos",
+			"title": "Sistemas dinámicos. Algunos ejemplos",
+			"author": "Dr. Porfirio Toledo"
+		},
+
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "17:00",
+			"day": "1",
+			"to": "17:30",
+			"area": "R. de tesis",
+			"title": "Oscilador armónico y estados coherentes",
+			"author": "Est. Germán Sameed Lopez Paredes"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "17:00",
+			"day": "2",
+			"to": "17:30",
+			"area": "R. de tesis",
+			"title": "Transfer",
+			"author": "Lic. Arfaxard Sánchez Estrella"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "17:00",
+			"day": "4",
+			"to": "17:30",
+			"area": "R. de tesis",
+			"title": "Un método poliedral para resolver sistemas de ecuaciones",
+			"author": "Est. Zuleyma Yazmin Ávila Rosales"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "17:00",
+			"day": "5",
+			"to": "17:30",
+			"area": "R. de tesis",
+			"title": "Una solución del problema de Banach generalizado usando teoría de haces fibrados y convexidad",
+			"author": "Lic. Carlos Alberto Lenis Posada"
+		},
+
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "17:30",
+			"day": "1",
+			"to": "18:00",
+			"area": "Ponencias",
+			"title": "Hiperbolicidad en el sentido de Gromov",
+			"author": "Est. José Antonio Manguce Tamayo"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "17:30",
+			"day": "2",
+			"to": "18:00",
+			"area": "Ponencias",
+			"title": "Clasificación de superficies",
+			"author": "Lic. Angel manuel Gill Villafuerte"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "17:30",
+			"day": "4",
+			"to": "18:00",
+			"area": "Ponencias",
+			"title": "Criptografía en tu celular",
+			"author": "Est. Rubí Ipiña Campos"
+		},
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "17:30",
+			"day": "5",
+			"to": "18:00",
+			"area": "Ponencias",
+			"title": "Makuco.net",
+			"author": "M.C. Rubén López González"
+		},
+
+		{
+			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
+			"from": "18:00",
+			"day": "4",
+			"to": "19:00",
+			"area": "Carteles",
+			"title": "Todos los carteles",
+			"author": "Varios autores"
+		}
+	]
+}

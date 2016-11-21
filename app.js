@@ -94,33 +94,25 @@ function initApp(scheduleData) {
 
 		computed: {
 			talksHappeningNow: function () {
-				var self = this;
-				var now = self.currentHour;
+				var now = this.currentHour;
 				var day = moment().format('d');
 
-				return this.schedule.filter((talk) => {
+				return this.schedule.schedule.filter((talk) => {
 					return talk.day == day && talk.from <= now && talk.to > now;
 				});
 			},
 
+			nextTime: function () {
+				var now = this.currentHour;
+
+				return this.schedule.marks.find(item => item > now);
+			},
+
 			talksHappeningNext: function () {
-				var self = this;
-				var now = self.currentHour;
 				var day = moment().format('d');
-				var nextTime;
+				var nextTime = this.nextTime;
 
-				// transform now to match next time
-				var curminute = now.split(':')[1];
-				var curhour = now.split(':')[0];
-				var minute = parseInt(parseInt(curminute)/30);
-
-				if (minute == 0) {
-					nextTime = `${curhour}:${30}`;
-				} else {
-					nextTime = `${parseInt(curhour)+1}:00`;
-				}
-
-				return this.schedule.filter((talk) => {
+				return this.schedule.schedule.filter((talk) => {
 					return talk.day == day && talk.from <= nextTime && talk.to > nextTime;
 				});
 			},

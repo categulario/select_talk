@@ -25,7 +25,7 @@
 			<div class="main-content">
 
 				<div class="btn-container" v-if="section=='home'">
-					<button class="btn" @click="talksNextClick">¿A qué puedo entrar a continuación?</button>
+					<button class="btn" @click="talksNextClick" v-if="nextTime">¿A qué puedo entrar a las {{ nextTime }}?</button>
 					<button class="btn" @click="talksNowClick">¿A qué puedo entrar ahora?</button>
 				</div>
 
