@@ -1,15 +1,17 @@
+'use strict';
+
 var request = new XMLHttpRequest();
 var scheduleData = [];
 
 request.open('GET', 'schedule.json', true);
-request.onload = () => {
+request.onload = function () {
 	if (request.status == 200) {
 		initApp(JSON.parse(request.responseText));
 	} else {
 		console.log('failed loading schedule data');
 	}
 };
-request.onerror = () => {
+request.onerror = function () {
 	console.log('server error or something');
 };
 request.send();
@@ -19,7 +21,7 @@ Vue.component('item-progress', {
 	props: ['from', 'to', 'hour'],
 
 	computed: {
-		progressBarWidth: function () {
+		progressBarWidth: function progressBarWidth() {
 			var from_hour = this.hourToDecimal(this.from);
 			var to_hour = this.hourToDecimal(this.to);
 			var cur_hour = this.hourToDecimal(this.hour);
@@ -28,14 +30,16 @@ Vue.component('item-progress', {
 			if (value < 0) {
 				return '0%';
 			} else {
-				return `${ value }%`;
+				return value + '%';
 			}
 		}
 	},
 
 	methods: {
-		hourToDecimal: function (hour) {
-			var pieces = hour.split(':').map(p => parseInt(p));
+		hourToDecimal: function hourToDecimal(hour) {
+			var pieces = hour.split(':').map(function (p) {
+				return parseInt(p);
+			});
 
 			return pieces[0] + pieces[1] / 60;
 		}
@@ -80,7 +84,7 @@ function initApp(scheduleData) {
 			}
 		},
 
-		created: function () {
+		created: function created() {
 			var self = this;
 
 			setInterval(function () {
@@ -89,41 +93,43 @@ function initApp(scheduleData) {
 		},
 
 		computed: {
-			talksHappeningNow: function () {
+			talksHappeningNow: function talksHappeningNow() {
 				var now = this.currentHour;
 				var day = moment().format('d');
 
-				return this.schedule.schedule.filter(talk => {
+				return this.schedule.schedule.filter(function (talk) {
 					return talk.day == day && talk.from <= now && talk.to > now;
 				});
 			},
 
-			nextTime: function () {
+			nextTime: function nextTime() {
 				var now = this.currentHour;
 
-				return this.schedule.marks.find(item => item > now);
+				return this.schedule.marks.find(function (item) {
+					return item > now;
+				});
 			},
 
-			talksHappeningNext: function () {
+			talksHappeningNext: function talksHappeningNext() {
 				var day = moment().format('d');
 				var nextTime = this.nextTime;
 
-				return this.schedule.schedule.filter(talk => {
+				return this.schedule.schedule.filter(function (talk) {
 					return talk.day == day && talk.from <= nextTime && talk.to > nextTime;
 				});
 			}
 		},
 
 		methods: {
-			talksNowClick: function () {
+			talksNowClick: function talksNowClick() {
 				this.changeSection('schedule', 'now');
 			},
 
-			talksNextClick: function () {
+			talksNextClick: function talksNextClick() {
 				this.changeSection('schedule', 'next');
 			},
 
-			runLeftAction: function () {
+			runLeftAction: function runLeftAction() {
 				if (this.left_action === null) {
 					// display left menu
 					return;
@@ -132,7 +138,7 @@ function initApp(scheduleData) {
 				this.changeSection(this.left_action);
 			},
 
-			changeSection: function (section, sub) {
+			changeSection: function changeSection(section, sub) {
 				this.section = section;
 				this.title = this.sections[section].title;
 				this.left_icon = this.sections[section].left_icon;

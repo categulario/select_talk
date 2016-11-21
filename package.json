@@ -8,9 +8,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
+    "babel-preset-latest": "^6.16.0",
     "grunt-babel": "^6.0.0",
     "grunt-postcss": "^0.8.0",
-    "load-grunt-tasks": "^3.5.2"
+    "load-grunt-tasks": "^3.5.2",
+    "postcss-css-variables": "^0.6.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
