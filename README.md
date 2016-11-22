@@ -15,3 +15,4 @@ Una aplicación para elegir a qué plática entrar en un congreso muy grande
 * filtrar además por área
 * normalizar horas a HH:MM
 * poder ver el programa usual
+* cuánto falta para la siguiente plática en vez de la hora
