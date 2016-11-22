@@ -29,6 +29,8 @@ Vue.component('item-progress', {
 
 			if (value < 0) {
 				return '0%';
+			} else if (value > 100) {
+				return '100%';
 			} else {
 				return value + '%';
 			}
