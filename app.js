@@ -79,6 +79,11 @@ function initApp(scheduleData) {
 							default_filter: 'talksHappeningNext',
 							default_key: 'area',
 						},
+						today: {
+							title: 'Programa hoy',
+							default_filter: 'talksToday',
+							default_key: 'from',
+						},
 					},
 				},
 			},
@@ -116,6 +121,14 @@ function initApp(scheduleData) {
 					return talk.day == day && talk.from <= nextTime && talk.to > nextTime;
 				});
 			},
+
+			talksToday: function () {
+				var day = moment().format('d');
+
+				return this.schedule.schedule.filter((talk) => {
+					return talk.day == day;
+				});
+			},
 		},
 
 		methods: {
@@ -125,6 +138,10 @@ function initApp(scheduleData) {
 
 			talksNextClick: function () {
 				this.changeSection('schedule', 'next');
+			},
+
+			scheduleClick: function () {
+				this.changeSection('schedule', 'today');
 			},
 
 			runLeftAction: function () {

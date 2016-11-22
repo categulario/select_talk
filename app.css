@@ -5,7 +5,7 @@
 	--color-mid: #BADAE5;
 	--color-dark: #A1C3C4;
 	--color-highlight: #84ADAF;
-	--color-text-black: #555;
+	--color-text-black: #333;
 }
 
 * {
@@ -167,4 +167,16 @@ body {
 .panel-header {
 	height: 140px;
 	background-color: var(--color-highlight);
+}
+
+.panel-item {
+	height: 38px;
+	line-height: 38px;
+	font-size: 18px;
+}
+.panel-item a {
+	display: block;
+	padding-left: 10px;
+	text-decoration: none;
+	color: var(--color-text-black);
 }
