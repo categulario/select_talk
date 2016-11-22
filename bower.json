@@ -1,0 +1,26 @@
+{
+  "name": "select_talk",
+  "authors": [
+    "Abraham Toriz Cruz <a.wonderful.code@gmail.com>"
+  ],
+  "description": "Choose talks in a congress",
+  "main": "index.html",
+  "keywords": [
+    "talks"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/categulario/select_talk",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#^4.7.0",
+    "vue": "^2.0.7",
+    "moment": "momentjs#^2.16.0"
+  }
+}
