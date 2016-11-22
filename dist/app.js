@@ -78,6 +78,11 @@ function initApp(scheduleData) {
 							title: 'Charlas siguientes',
 							default_filter: 'talksHappeningNext',
 							default_key: 'area'
+						},
+						today: {
+							title: 'Programa hoy',
+							default_filter: 'talksToday',
+							default_key: 'from'
 						}
 					}
 				}
@@ -117,6 +122,14 @@ function initApp(scheduleData) {
 				return this.schedule.schedule.filter(function (talk) {
 					return talk.day == day && talk.from <= nextTime && talk.to > nextTime;
 				});
+			},
+
+			talksToday: function talksToday() {
+				var day = moment().format('d');
+
+				return this.schedule.schedule.filter(function (talk) {
+					return talk.day == day;
+				});
 			}
 		},
 
@@ -129,13 +142,27 @@ function initApp(scheduleData) {
 				this.changeSection('schedule', 'next');
 			},
 
+			scheduleClick: function scheduleClick() {
+				this.changeSection('schedule', 'today');
+			},
+
 			runLeftAction: function runLeftAction() {
 				if (this.left_action === null) {
-					// display left menu
+					this.showPanel();
 					return;
 				}
 
 				this.changeSection(this.left_action);
+			},
+
+			showPanel: function showPanel() {
+				document.getElementById('left-panel').classList = [];
+				document.getElementById('overlay').classList = [];
+			},
+
+			hidePanel: function hidePanel() {
+				document.getElementById('left-panel').className = "off";
+				document.getElementById('overlay').className = "off";
 			},
 
 			changeSection: function changeSection(section, sub) {
