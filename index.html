@@ -24,8 +24,8 @@
 					{{ currentHour }}
 				</div>
 			</div>
-			<div class="main-content">
 
+			<div class="main-content">
 				<div class="btn-container" v-if="section=='home'">
 					<button class="btn" @click="talksNextClick" v-if="nextTime">¿A qué puedo entrar a las {{ nextTime }}?</button>
 					<button class="btn" @click="talksNowClick">¿A qué puedo entrar ahora?</button>
@@ -69,9 +69,14 @@
 						No hay ninguna plática, ve a comer algo
 					</div>
 				</div>
-
 			</div>
 
+			<!-- the magic left panel -->
+			<div id="overlay" class="off" @click="hidePanel"></div>
+			<div id="left-panel" class="off">
+				<div class="panel-header"></div>
+				<div class="panel-body"></div>
+			</div>
 		</div>
 
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.8/vue.min.js"></script>

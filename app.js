@@ -129,11 +129,21 @@ function initApp(scheduleData) {
 
 			runLeftAction: function () {
 				if (this.left_action === null) {
-					// display left menu
+					this.showPanel();
 					return;
 				}
 
 				this.changeSection(this.left_action);
+			},
+
+			showPanel: function () {
+				document.getElementById('left-panel').classList = [];
+				document.getElementById('overlay').classList = [];
+			},
+
+			hidePanel: function () {
+				document.getElementById('left-panel').className = "off";
+				document.getElementById('overlay').className = "off";
 			},
 
 			changeSection: function (section, sub) {

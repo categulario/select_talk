@@ -135,3 +135,36 @@ body {
 	padding: 20px;
 	color: var(--color-text-black);
 }
+
+#overlay {
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	background-color: #000;
+	opacity: 0.5;
+	cursor: pointer;
+}
+#overlay.off {
+	z-index: -1;
+}
+
+#left-panel {
+	height: 100vh;
+	width: 80vw;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	background-color: var(--color-dark);
+	z-index: 20;
+}
+#left-panel.off {
+	left: -80vw;
+}
+
+.panel-header {
+	height: 140px;
+	background-color: var(--color-highlight);
+}
