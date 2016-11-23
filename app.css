@@ -33,7 +33,7 @@ body {
 	color: #fff;
 }
 #loader i {
-	font-size: 50px;
+	font-size: 70px;
 }
 #loader.off {
 	z-index: -1;
