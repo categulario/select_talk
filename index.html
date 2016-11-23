@@ -82,16 +82,20 @@
 				</div>
 				<div class="panel-body">
 					<div class="panel-item-title">Programa por día</div>
-					<div class="panel-item"><a href="#">Lunes</a></div>
-					<div class="panel-item"><a href="#">Martes</a></div>
-					<div class="panel-item"><a href="#">Miércoles</a></div>
-					<div class="panel-item"><a href="#">Jueves</a></div>
-					<div class="panel-item"><a href="#">Viernes</a></div>
+					<div class="panel-item"><a @click.prevent="scheduleByDay" data-day="1" href="#">Lunes</a></div>
+					<div class="panel-item"><a @click.prevent="scheduleByDay" data-day="2" href="#">Martes</a></div>
+					<div class="panel-item"><a @click.prevent="scheduleByDay" data-day="3" href="#">Miércoles</a></div>
+					<div class="panel-item"><a @click.prevent="scheduleByDay" data-day="4" href="#">Jueves</a></div>
+					<div class="panel-item"><a @click.prevent="scheduleByDay" data-day="5" href="#">Viernes</a></div>
 
-					<div class="panel-item-title">Programa por área</div>
-					<div class="panel-item"><a href="#">Cursos</a></div>
-					<div class="panel-item"><a href="#">Ponencias</a></div>
-					<div class="panel-item"><a href="#">Reporte de tesis</a></div>
+					<div class="panel-item-title">
+						Programa por área <span class="beta">
+							<i class="fa fa-bolt"></i>Beta<i class="fa fa-bolt"></i>
+						</span>
+					</div>
+					<div class="panel-item"><a @click.prevent="scheduleByArea" data-area="1" href="#">Cursos</a></div>
+					<div class="panel-item"><a @click.prevent="scheduleByArea" data-area="2" href="#">Ponencias</a></div>
+					<div class="panel-item"><a @click.prevent="scheduleByArea" data-area="3" href="#">Reportes de tesis</a></div>
 				</div>
 			</div>
 

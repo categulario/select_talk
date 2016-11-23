@@ -75,19 +75,28 @@ function initApp(scheduleData) {
 					subs: {
 						now: {
 							title: 'Charlas ahora',
-							default_filter: 'talksHappeningNow',
-							default_key: 'area'
+							default_filter: 'talksHappeningNow'
 						},
 						next: {
 							title: 'Charlas siguientes',
-							default_filter: 'talksHappeningNext',
-							default_key: 'area'
+							default_filter: 'talksHappeningNext'
 						},
 						today: {
 							title: 'Programa hoy',
-							default_filter: 'talksToday',
-							default_key: 'from'
-						}
+							default_filter: 'talksToday'
+						},
+
+						// Routes by day
+						day1: { title: 'Programa Lunes', default_filter: 'talksDay1' },
+						day2: { title: 'Programa Martes', default_filter: 'talksDay2' },
+						day3: { title: 'Programa Miércoles', default_filter: 'talksDay3' },
+						day4: { title: 'Programa Jueves', default_filter: 'talksDay4' },
+						day5: { title: 'Programa Viernes', default_filter: 'talksDay5' },
+
+						// Routes by area
+						area1: { title: 'Cursos', default_filter: 'talksArea1' },
+						area2: { title: 'Ponencias', default_filter: 'talksArea2' },
+						area3: { title: 'Reportes de tesis', default_filter: 'talksArea3' }
 					}
 				}
 			}
@@ -134,6 +143,50 @@ function initApp(scheduleData) {
 				return this.schedule.schedule.filter(function (talk) {
 					return talk.day == day;
 				});
+			},
+
+			// filters by day
+			talksDay1: function talksDay1() {
+				return this.schedule.schedule.filter(function (talk) {
+					return talk.day == '1';
+				});
+			},
+			talksDay2: function talksDay2() {
+				return this.schedule.schedule.filter(function (talk) {
+					return talk.day == '2';
+				});
+			},
+			talksDay3: function talksDay3() {
+				return this.schedule.schedule.filter(function (talk) {
+					return talk.day == '3';
+				});
+			},
+			talksDay4: function talksDay4() {
+				return this.schedule.schedule.filter(function (talk) {
+					return talk.day == '4';
+				});
+			},
+			talksDay5: function talksDay5() {
+				return this.schedule.schedule.filter(function (talk) {
+					return talk.day == '5';
+				});
+			},
+
+			// filters by area
+			talksArea1: function talksArea1() {
+				return this.schedule.schedule.filter(function (talk) {
+					return talk.area == 'Cursos';
+				});
+			},
+			talksArea2: function talksArea2() {
+				return this.schedule.schedule.filter(function (talk) {
+					return talk.area == 'Ponencias';
+				});
+			},
+			talksArea3: function talksArea3() {
+				return this.schedule.schedule.filter(function (talk) {
+					return talk.area == 'R. de tesis';
+				});
 			}
 		},
 
@@ -159,6 +212,18 @@ function initApp(scheduleData) {
 				this.changeSection(this.left_action);
 			},
 
+			scheduleByDay: function scheduleByDay(event) {
+				var day = event.target.dataset.day;
+
+				this.changeSection('schedule', 'day' + day);
+			},
+
+			scheduleByArea: function scheduleByArea(event) {
+				var area = event.target.dataset.area;
+
+				this.changeSection('schedule', 'area' + area);
+			},
+
 			showPanel: function showPanel() {
 				document.getElementById('left-panel').classList = [];
 				document.getElementById('overlay').classList = [];
@@ -170,6 +235,8 @@ function initApp(scheduleData) {
 			},
 
 			changeSection: function changeSection(section, sub) {
+				this.hidePanel();
+
 				this.section = section;
 				this.title = this.sections[section].title;
 				this.left_icon = this.sections[section].left_icon;
@@ -178,7 +245,6 @@ function initApp(scheduleData) {
 				if (this.sections[section].subs && sub) {
 					this.title = this.sections[section].subs[sub].title;
 					this.default_filter = this.sections[section].subs[sub].default_filter;
-					this.default_key = this.sections[section].subs[sub].default_key;
 				}
 			}
 		}

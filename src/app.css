@@ -9,6 +9,7 @@
 	--color-dark: #A1C3C4;
 	--color-highlight: #84ADAF;
 	--color-text-black: #333;
+	--color-danger: #C54343;
 }
 
 * {
@@ -231,4 +232,9 @@ body {
 	padding-left: 10px;
 	text-decoration: none;
 	color: var(--color-text-black);
+}
+
+.beta {
+	color: var(--color-danger);
+	font-style: italic;
 }
