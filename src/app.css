@@ -1,5 +1,8 @@
 :root {
 	--title-height: 48px;
+	--panel-item-height: 48px;
+	--panel-header-height: 140px;
+
 	--color-bg: #DCE4E7;
 	--color-light: #C3E6EC;
 	--color-mid: #BADAE5;
@@ -178,7 +181,7 @@ body {
 	position: fixed;
 	left: 0px;
 	top: 0px;
-	background-color: var(--color-dark);
+	background-color: var(--color-bg);
 	z-index: 20;
 }
 #left-panel.off {
@@ -186,14 +189,29 @@ body {
 }
 
 .panel-header {
-	height: 140px;
+	height: var(--panel-header-height);
 	background-color: var(--color-highlight);
 }
+.panel-body {
+	height: calc(100vh - var(--panel-header-height));
+	overflow-y: auto;
+}
 
-.panel-item {
+.panel-item-title {
+	font-size: 16px;
+	font-weight: bold;
 	height: 38px;
 	line-height: 38px;
+	padding-left: 20px;
+	color: var(--color-text-black);
+}
+.panel-item {
+	height: var(--panel-item-height);
+	line-height: var(--panel-item-height);
 	font-size: 18px;
+	border-left: 5px solid var(--color-highlight);
+	background-color: var(--color-light);
+	margin-top: 5px;
 }
 .panel-item a {
 	display: block;
