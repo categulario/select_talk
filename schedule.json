@@ -24,6 +24,7 @@
 			"title": "Inauguración",
 			"author": "Facultad de matemáticas"
 		},
+
 		{
 			"place": "Sala de usos múltiples de la Facultad de Instrumentación Electrónica",
 			"from": "09:30",
@@ -47,8 +48,8 @@
 			"from": "09:30",
 			"day": "3",
 			"to": "10:30",
-			"area": "Ponencias",
-			"title": "Existencia de ciclos límites en una cadena alimentaria tritrófica con respuestas funcionales de tipo logística y Holling II y III",
+			"area": "Cursos",
+			"title": "Sistemas Dinámicos y Álgebra Computacional",
 			"author": "Dr. Francisco Eduardo Castillo Santos"
 		},
 		{
