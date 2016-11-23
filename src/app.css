@@ -190,7 +190,20 @@ body {
 
 .panel-header {
 	height: var(--panel-header-height);
-	background-color: var(--color-highlight);
+	background-color: gray;
+	background-image: url(../img/panel-bg.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+
+	text-align: right;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	padding-bottom: 10px;
+	padding-right: 10px;
 }
 .panel-body {
 	height: calc(100vh - var(--panel-header-height));
