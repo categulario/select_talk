@@ -49,6 +49,8 @@ Vue.component('item-progress', {
 });
 
 function initApp(scheduleData) {
+	document.getElementById('loader').className = 'off';
+
 	window.App = new Vue({
 		el: '#app',
 
