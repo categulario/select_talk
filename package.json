@@ -10,6 +10,8 @@
     "autoprefixer": "^6.5.3",
     "babel-preset-latest": "^6.16.0",
     "grunt-babel": "^6.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-postcss": "^0.8.0",
     "load-grunt-tasks": "^3.5.2",
     "postcss-css-variables": "^0.6.0"

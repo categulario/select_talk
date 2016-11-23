@@ -21,6 +21,7 @@
   "dependencies": {
     "font-awesome": "fontawesome#^4.7.0",
     "vue": "^2.0.7",
-    "moment": "momentjs#^2.16.0"
+    "moment": "momentjs#^2.16.0",
+    "babel-polyfill": "^0.0.1"
   }
 }
